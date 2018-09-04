@@ -31,18 +31,27 @@
         <button ion-button (click)="iniciar(creds)">
             Buscar
           </button>
-         
+
+        
+
           <ion-label>CLIENTES</ion-label>
           <ion-grid >
-             
-              <ion-row wrap *ngFor="let res of ResArray">
+              <ion-row>
+              <ion-col> Tipo Id</ion-col>
+              <ion-col> Núm Id</ion-col>
+              <ion-col> Nombres</ion-col>
+              <ion-col> Teléfono</ion-col>
+              <ion-col> Dirección</ion-col>
+              <ion-col> Acciones</ion-col>
+            </ion-row>
+              <ion-row *ngFor="let res of ResArray">
                
-                <ion-col width-25> {{ res.tipo }}</ion-col>
-                <ion-col width-25> {{ res.numero }}</ion-col>
-                <ion-col width-25> {{ res.nombre }}</ion-col>
-                <ion-col width-25> {{ res.telefono }}</ion-col>
-                <ion-col width-25> {{ res.direccion }}</ion-col>
-                <ion-col width-25> <button ion-button small color="danger" (click)="gotoDetails(res)"> Editar</button>
+                <ion-col> {{ res.tipo }}</ion-col>
+                <ion-col> {{ res.numero }}</ion-col>
+                <ion-col> {{ res.nombre }}</ion-col>
+                <ion-col > {{ res.telefono }}</ion-col>
+                <ion-col> {{ res.direccion }}</ion-col>
+                <ion-col > <button ion-button small color="danger" (click)="gotoDetails(res)"> Editar</button>
                   <button ion-button small color="danger" (click)="gotoDetails(res)"> Eliminar</button>
                 </ion-col>
             
