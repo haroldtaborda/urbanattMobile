@@ -8,12 +8,17 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { InicioPage } from '../pages/inicio/inicio';
+import { ClientesPage } from '../pages/clientes/clientes';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 @NgModule({
   declarations: [
     MyApp,
+   
+   
+   
+    ClientesPage,
     AboutPage,
     ContactPage,
     InicioPage,
@@ -28,6 +33,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
+    ClientesPage,
     AboutPage,
     ContactPage,
     InicioPage,

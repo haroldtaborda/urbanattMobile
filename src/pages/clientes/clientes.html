@@ -1,0 +1,54 @@
+<ion-header>
+    <ion-navbar>
+      <ion-title>
+        Clientes
+      </ion-title>
+    </ion-navbar>
+  </ion-header>
+  
+  <ion-content>
+      <ion-list>
+
+          <ion-item>
+              <ion-label>Tipo identificación</ion-label>
+              <ion-select [(ngModel)]="gender">
+                <ion-option value="f">Cédula ciudadania</ion-option>
+                <ion-option value="m">Cédula extrangeria</ion-option>
+                <ion-option value="m">Nit</ion-option>
+              </ion-select>
+            </ion-item>
+        
+          <ion-item>
+            <ion-label>Número identificación</ion-label>
+            <ion-input type="text"></ion-input>
+          </ion-item>
+        
+        </ion-list>
+
+        <button ion-button (click)="cancelar()">
+            Cancelar
+          </button>
+        <button ion-button (click)="iniciar(creds)">
+            Buscar
+          </button>
+         
+          <ion-label>CLIENTES</ion-label>
+          <ion-grid >
+             
+              <ion-row wrap *ngFor="let res of ResArray">
+               
+                <ion-col width-25> {{ res.tipo }}</ion-col>
+                <ion-col width-25> {{ res.numero }}</ion-col>
+                <ion-col width-25> {{ res.nombre }}</ion-col>
+                <ion-col width-25> {{ res.telefono }}</ion-col>
+                <ion-col width-25> {{ res.direccion }}</ion-col>
+                <ion-col width-25> <button ion-button small color="danger" (click)="gotoDetails(res)"> Editar</button>
+                  <button ion-button small color="danger" (click)="gotoDetails(res)"> Eliminar</button>
+                </ion-col>
+            
+              </ion-row>
+           
+            </ion-grid>
+          
+  </ion-content>
+  
