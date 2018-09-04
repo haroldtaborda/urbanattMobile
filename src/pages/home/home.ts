@@ -11,4 +11,19 @@ export class HomePage {
 
   }
 
+   private iniciar(_credentials) {
+      console.log("Inicia sesion");
+      }
+     
+     
+private crear(_credentials) {
+    console.log("crea usuario");
+      
+      }
+      
+      private recordar(_credentials) {
+    console.log("Olvido contraseña");
+      
+      }
+
 }
