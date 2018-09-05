@@ -37,7 +37,9 @@ export class ClientesPage {
   }
 
   cancelar () {
-   console.log("ss");
+    this.navCtrl.pop();
+    this.navCtrl.push(InicioPage);
+   
   }
 }
 

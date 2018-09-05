@@ -14,6 +14,7 @@ export class HomePage {
 
    private iniciar(_credentials) {
       console.log("Inicia sesion");
+      
       this.navCtrl.push(InicioPage);
       }
      

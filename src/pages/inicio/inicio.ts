@@ -21,10 +21,13 @@ export class InicioPage {
   }
 
    openPage(p) {
+     
     if(p == 'clientes'){
+      this.navCtrl.pop();
       this.navCtrl.push(ClientesPage);
     }
     else  if(p == 'cerrarSesion'){
+      this.navCtrl.pop();
       this.navCtrl.push(HomePage);
     }
   }
