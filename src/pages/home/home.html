@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>{{mostarLogin == true ? 'Home' : 'Inicio de Sesión'}}</ion-title>
+    <ion-title>{{mostarLogin == true ? 'Menu principal' : 'Inicio de Sesión'}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -27,8 +27,33 @@
          </div>
          <div [hidden]="!mostarLogin">
           <ion-label style="text-align: center;font-size: 2rem;font-weight: 500">Pagina de inicio</ion-label>
-          <ion-img style="width:300px !important; height: 300px !important;" src="../../resources/img/looo.jpg"></ion-img>
-          <ion-img style="justify-content: center; width:300px !important; height: 300px !important;" src="../../resources/img/URBANATTLOGO.png"></ion-img>
+          
+          <ion-list>
+            <button ion-item menuClose (click)="openPage('clientes')" icon-start>
+               <ion-icon name='ios-person-add' style="zoom:1.5"></ion-icon>
+             Clientes
+           </button>
+           <button ion-item menuClose (click)="openPage('clientes')" icon-start>
+            <ion-icon name='md-archive' style="zoom:1.5"></ion-icon>
+          Productos
+        </button>
+        <button ion-item menuClose (click)="openPage('clientes')" icon-start>
+          <ion-icon name='md-checkbox-outline' style="zoom:1.5"></ion-icon>
+        Facturas
+      </button>
+      <button ion-item menuClose (click)="openPage('clientes')" icon-start>
+        <ion-icon name='md-document' style="zoom:1.5"></ion-icon>
+        Reportes
+    </button>
+    
+           <button ion-item menuClose (click)="openPage('cerrarSesion')" icon-start>
+               <ion-icon name='ios-close-circle-outline'  style="zoom:1.0"></ion-icon> Cerrar sesión
+           </button>
+         </ion-list>
+          
+         
+         
+         
          </div>
 
 </ion-content>

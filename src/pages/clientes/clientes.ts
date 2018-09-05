@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { App, MenuController } from 'ionic-angular';
-import { InicioPage } from '../inicio/inicio';
+import { HomePage } from '../home/home';
 @Component({
   selector: 'page-clientes',
   templateUrl: 'clientes.html'
@@ -36,10 +36,6 @@ export class ClientesPage {
   constructor(public navCtrl: NavController) {
   }
 
-  cancelar () {
-    this.navCtrl.pop();
-    this.navCtrl.push(InicioPage);
-   
-  }
+  
 }
 
