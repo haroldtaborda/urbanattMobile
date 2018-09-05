@@ -6,7 +6,7 @@
 
 <ion-content padding>
   
-      <div class="padre">
+      <div [hidden]="mostarLogin" class="padre">
           <ion-icon style="zoom:10.0; display: flex; justify-content: center" name="ios-people"></ion-icon>
             <ion-list>
                 <ion-item>
@@ -23,10 +23,10 @@
            
             <button ion-button (click)="iniciar(creds)" style="width: 100%;">
                 Ingresar
-              </button>
-        <div>   
-    
-             </div>
-           
+              </button>        
          </div>
+         <div [hidden]="!mostarLogin">
+          <ion-label fixed>Hola</ion-label>
+         </div>
+
 </ion-content>
