@@ -1,6 +1,6 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Inicio de Sesión</ion-title>
+    <ion-title>{{mostarLogin == true ? 'Home' : 'Inicio de Sesión'}}</ion-title>
   </ion-navbar>
 </ion-header>
 
@@ -26,7 +26,9 @@
               </button>        
          </div>
          <div [hidden]="!mostarLogin">
-          <ion-label fixed>Hola</ion-label>
+          <ion-label style="text-align: center;font-size: 2rem;font-weight: 500">Pagina de inicio</ion-label>
+          <ion-img style="width:300px !important; height: 300px !important;" src="../../resources/img/looo.jpg"></ion-img>
+          <ion-img style="justify-content: center; width:300px !important; height: 300px !important;" src="../../resources/img/URBANATTLOGO.png"></ion-img>
          </div>
 
 </ion-content>
