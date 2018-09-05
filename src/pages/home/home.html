@@ -2,7 +2,13 @@
   <ion-navbar>
     <ion-title>{{mostarLogin == true ? 'Menu principal' : 'Inicio de Sesión'}}</ion-title>
   </ion-navbar>
+  
 </ion-header>
+
+
+
+
+ 
 
 <ion-content padding>
   
@@ -21,7 +27,7 @@
                 
             </ion-list>
            
-            <button ion-button (click)="iniciar(creds)" style="width: 100%;">
+            <button  ion-button round (click)="iniciar(creds)" style="width: 100%;">
                 Ingresar
               </button>        
          </div>
@@ -51,7 +57,14 @@
            </button>
          </ion-list>
           
-         
+       
+         <ion-col col-12>
+          <ion-img col-6 class="center"  src="../../resources/img/Urbanatt-banner-2.jpg"></ion-img>
+         </ion-col>
+        
+        
+          <ion-img  src="..\..\resources\img\Urbanatt-banner1.jpg"></ion-img>
+    
          
          
          </div>

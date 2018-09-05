@@ -1,5 +1,15 @@
 page-home {
 
+
+  .ion-img {
+    object-fit: resize;
+    height: 100%;
+    width: auto !important;
+    border: 0;
+    padding: 0;
+    background-color: grey;
+  }
+
 .fixed-content {
   left: 0;
   right: 0;
