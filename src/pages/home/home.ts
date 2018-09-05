@@ -8,13 +8,13 @@ import { InicioPage } from '../inicio/inicio';
 })
 export class HomePage {
 
-  
+  public mostarLogin=false;
   constructor(public navCtrl: NavController) {
+  
   } 
 
    private iniciar(_credentials) {
-      console.log("Inicia sesion");
-      
+      this.mostarLogin=true;
       this.navCtrl.push(InicioPage);
       }
      

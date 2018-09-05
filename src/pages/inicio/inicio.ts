@@ -13,6 +13,7 @@ export class InicioPage {
 
 
   constructor(public navCtrl: NavController,public menuCtrl: MenuController) {
+    
   }
 
   private openMenu() {
