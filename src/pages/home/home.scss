@@ -1,15 +1,5 @@
 page-home {
 
-
-  .ion-img {
-    object-fit: resize;
-    height: 100%;
-    width: auto !important;
-    border: 0;
-    padding: 0;
-    background-color: grey;
-  }
-
 .fixed-content {
   left: 0;
   right: 0;
@@ -17,20 +7,28 @@ page-home {
   bottom: 0;
   position: absolute;
   display: block;
-    background-color: #A0F739 !important;
+    background-color: #66a038 !important;
 }
     
+.button-md{
+  background-color: #878D80   !important;
+}
 
-    
-    .padre {
+.label-md{
+  color:azure !important;
+}
+
+.item-md{
+  background-color:#66a038     !important;
+}
+.padre {
   padding: 10px 2rem;
      margin-top: 5rem;
         margin-left :3rem;
         
 }
     
-    
-    .button-ios {
+ .button-ios {
   border-radius: 4px;
   height: 2.8em;
   font-size: 1.6rem;
@@ -41,7 +39,7 @@ page-home {
 }
 
 .button-ios.activated {
-  background-color: #2db50a !important;
+  background-color: #66a038 !important;
      color: #fff;
   opacity: 1;
 }
