@@ -25,36 +25,37 @@
         
         </ion-list>
 
-        <button ion-button (click)="iniciar(creds)">
+        <button ion-button round (click)="iniciar(creds)">
             Buscar
           </button>
 
         
 
-          <ion-label>CLIENT ES</ion-label>
-          <ion-grid >
+          <ion-label >CLIENTES</ion-label>
+         
+          <ion-grid>
               <ion-row>
-              <ion-col > Tipo Id</ion-col>
-              <ion-col> Núm Id</ion-col>
-              <ion-col> Nombres</ion-col>
-              <ion-col> Teléfono</ion-col>
-              <ion-col> Dirección</ion-col>
-              <ion-col> Acciones</ion-col>
+              <ion-col>Tipo</ion-col>
+              <ion-col>Número</ion-col>
+              <ion-col>Nombres</ion-col>
+              <ion-col><ion-icon name='md-add' style="zoom:1.5"></ion-icon></ion-col>
             </ion-row>
               <ion-row *ngFor="let res of ResArray">
                
                 <ion-col> {{ res.tipo }}</ion-col>
                 <ion-col> {{ res.numero }}</ion-col>
                 <ion-col> {{ res.nombre }}</ion-col>
-                <ion-col > {{ res.telefono }}</ion-col>
-                <ion-col> {{ res.direccion }}</ion-col>
-                <ion-col > <button ion-button small color="danger" (click)="gotoDetails(res)"> Editar</button>
-                  <button ion-button small color="danger" (click)="gotoDetails(res)"> Eliminar</button>
+                <ion-col > 
+                    <ion-icon name='ios-arrow-dropright' style="zoom:1.5"></ion-icon>
+                <ion-icon name='ios-create-outline' style="zoom:1.5"></ion-icon>
+                <ion-icon name='ios-cut-outline' style="zoom:1.5"></ion-icon>
+               
                 </ion-col>
             
               </ion-row>
            
             </ion-grid>
+         
           
   </ion-content>
   

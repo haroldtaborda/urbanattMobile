@@ -1,5 +1,18 @@
 page-clientes {
 
+  .ion-row {
+    white-space: nowrap;
+    width: 50px;
+    overflow-x: auto !important;
+  }
+  .ion-scroll[scrollX] {
+    white-space: nowrap;
+    height: 120px;
+    overflow: auto !important;
+  }
+    .scroll-item {
+      display: inline-block;
+    }
   .fixed-content {
     left: 0;
     right: 0;
