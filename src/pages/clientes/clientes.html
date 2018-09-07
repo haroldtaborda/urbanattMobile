@@ -7,31 +7,35 @@
   </ion-header>
   
   <ion-content>
+      
+      <ion-label style="text-align: center;font-size: 2rem;font-weight: 300">Filtros clientes</ion-label>
+     
       <ion-list>
 
           <ion-item>
               <ion-label>Tipo identificación</ion-label>
-              <ion-select [(ngModel)]="gender">
-                <ion-option value="f">Cédula ciudadania</ion-option>
-                <ion-option value="m">Cédula extrangeria</ion-option>
-                <ion-option value="m">Nit</ion-option>
+              <ion-select [(ngModel)]="tipoId">
+                <ion-option value="CC">Cédula ciudadania</ion-option>
+                <ion-option value="CE">Cédula extrangeria</ion-option>
+                <ion-option value="NIT">Nit</ion-option>
+               
               </ion-select>
             </ion-item>
         
           <ion-item>
             <ion-label>Número identificación</ion-label>
-            <ion-input type="text"></ion-input>
+            <ion-input [(ngModel)]="numeroId" type="text"></ion-input>
           </ion-item>
         
         </ion-list>
 
-        <button ion-button round (click)="iniciar(creds)">
+        <button ion-button round (click)="search()">
             Buscar
           </button>
 
         
 
-          <ion-label >CLIENTES</ion-label>
+          <ion-label style="text-align: center;font-size: 2rem;font-weight: 300">Clientes</ion-label>
          
           <ion-grid>
               <ion-row>
@@ -43,7 +47,7 @@
               </button>
               </ion-col>
             </ion-row>
-              <ion-row *ngFor="let res of ResArray">
+              <ion-row *ngFor="let res of listaClientes">
                
                 <ion-col> {{ res.tipo }}</ion-col>
                 <ion-col> {{ res.numero }}</ion-col>

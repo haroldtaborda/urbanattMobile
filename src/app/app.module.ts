@@ -9,20 +9,20 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { InicioPage } from '../pages/inicio/inicio';
 import { ClientesPage } from '../pages/clientes/clientes';
+import { CreatePage } from '../pages/clientes/create/create';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
 
 @NgModule({
   declarations: [
     MyApp,
-   
-   
-   
     ClientesPage,
     AboutPage,
     ContactPage,
     InicioPage,
     HomePage,
+    CreatePage,
     TabsPage
     
   ],
@@ -38,6 +38,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     InicioPage,
     HomePage,
+    CreatePage,
     TabsPage
   ],
   providers: [

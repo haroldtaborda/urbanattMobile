@@ -1,0 +1,73 @@
+page-create {
+
+
+  .estiloIconosTabla{
+    background: transparent !important;
+    border: transparent !important;
+    color: azure !important;
+  }
+  .ion-row {
+    white-space: nowrap;
+    width: 50px;
+    overflow-x: auto !important;
+  }
+  .ion-scroll[scrollX] {
+    white-space: nowrap;
+    height: 120px;
+    overflow: auto !important;
+  }
+    .scroll-item {
+      display: inline-block;
+    }
+  .fixed-content {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+      background-color: #66a038 !important;
+  }
+      
+  .content-md{
+    color:azure;
+  }
+  .button-md{
+    background-color: #878D80   !important;
+  }
+  
+  .label-md{
+    color:azure !important;
+  }
+
+  .item-md{
+    background-color:#66a038     !important;
+    color:azure;
+  }
+  .padre {
+    padding: 10px 2rem;
+       margin-top: 5rem;
+          margin-left :3rem;
+          
+  }
+      
+   .button-ios {
+    border-radius: 4px;
+    height: 2.8em;
+    font-size: 1.6rem;
+    color: black;
+    background-color: #f7f7f7;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+  }
+  
+  .button-ios.activated {
+    background-color: #66a038 !important;
+       color: #fff;
+    opacity: 1;
+  }
+  
+  .button-ios:hover:not(.disable-hover) {
+    opacity: 0.8;
+  }
+} 
