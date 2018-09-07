@@ -78,15 +78,19 @@ export class ClientesPage {
   }
 
 private create(){
+  debugger;
 let profileModal = this.modalCtrl.create(CreatePage);
    profileModal.onDidDismiss(data => {
+     if(data){
      this.ResArray.push(data);
+     }
    });
    profileModal.present();
   }
   private edit(clienteEdita){
     let profileModal = this.modalCtrl.create(CreatePage, { cliEdit: clienteEdita });
    profileModal.onDidDismiss(data => {
+    if(data){
     const index: number = this.ResArray.indexOf(clienteEdita);
      //primero elimino el anterior
      if (index !== -1) {
@@ -94,6 +98,7 @@ let profileModal = this.modalCtrl.create(CreatePage);
       }   
       //agrego el editado
       this.ResArray.push(data);
+    }
    });
    profileModal.present();
   }

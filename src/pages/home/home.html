@@ -7,7 +7,7 @@
 <ion-content>
 
       <div [hidden]="mostarLogin" class="padre">
-          <ion-icon style="zoom:10.0; display: flex; justify-content: center; color:azure" name="ios-people-outline"></ion-icon>
+          <ion-icon style="zoom:10.0; display: flex; justify-content: center" name="ios-people-outline"></ion-icon>
             <ion-list>
                 <ion-item>
                     <ion-label fixed>Usuario</ion-label>
@@ -29,26 +29,35 @@
           <ion-label style="text-align: center;font-size: 2rem;font-weight: 500">Menu principal</ion-label>
           
           <ion-list>
-            <button ion-item  (click)="openPage('clientes')" icon-start>
+              <ion-item>
+            <button class="estiloIconos"  (click)="openPage('clientes')">
                <ion-icon name='ios-person-add' style="zoom:1.5"></ion-icon>
              Clientes
            </button>
-           <button ion-item  (click)="openPage('clientes')" icon-start>
+              </ion-item>
+              <ion-item>
+           <button class="estiloIconos"  (click)="openPage('clientes')">
             <ion-icon name='md-archive' style="zoom:1.5"></ion-icon>
           Productos
         </button>
-        <button ion-item  (click)="openPage('clientes')" icon-start>
+              </ion-item>
+              <ion-item>
+        <button class="estiloIconos"  (click)="openPage('clientes')">
           <ion-icon name='md-checkbox-outline' style="zoom:1.5"></ion-icon>
         Facturas
       </button>
-      <button ion-item  (click)="openPage('clientes')" icon-start>
+              </ion-item>
+              <ion-item>
+      <button class="estiloIconos"  (click)="openPage('clientes')">
         <ion-icon name='md-document' style="zoom:1.5"></ion-icon>
         Reportes
     </button>
-    
-           <button ion-item  (click)="openPage('cerrarSesion')" icon-start>
-               <ion-icon name='ios-close-circle-outline'  style="zoom:1.0"></ion-icon> Cerrar sesión
+              </ion-item>
+     <ion-item>
+           <button class="estiloIconos" (click)="openPage('cerrarSesion')" icon-start>
+               <ion-icon name='ios-close-circle-outline'  style="zoom:1.5"></ion-icon> Cerrar sesión
            </button>
+     </ion-item>
          </ion-list>
          </div>
 

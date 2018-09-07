@@ -12,6 +12,7 @@ export class CreatePage {
   cliente={};
   constructor(public navCtrl: NavController,private alertCtrl: AlertController,
     public viewCtrl: ViewController, params: NavParams) {
+      debugger;
       if(params.get('cliEdit') != null){
     this.cliente=params.get('cliEdit');
       }

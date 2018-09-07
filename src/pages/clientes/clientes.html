@@ -8,7 +8,7 @@
   
   <ion-content>
       
-      <ion-label style="text-align: center;font-size: 2rem;font-weight: 300">Filtros clientes</ion-label>
+      <ion-label style="text-align: center;font-size: 2rem;font-weight: 500">Filtros clientes</ion-label>
      
       <ion-list>
 
@@ -35,37 +35,39 @@
 
         
 
-          <ion-label style="text-align: center;font-size: 2rem;font-weight: 300">Clientes</ion-label>
+          <ion-label style="text-align: center;font-size: 2rem;font-weight: 500">Clientes</ion-label>
          
           <ion-grid>
               <ion-row>
-              <ion-col>Tipo</ion-col>
-              <ion-col>Número</ion-col>
-              <ion-col>Nombres</ion-col>
-              <ion-col> <button class="estiloIconosTabla" (click)="create()"> 
-                <ion-icon name='md-add' style="zoom:1.5"></ion-icon>
+              <ion-col class="estiloHeaderTabla">Tipo</ion-col>
+              <ion-col class="estiloHeaderTabla">Número</ion-col>
+              <ion-col class="estiloHeaderTabla">Nombres</ion-col>
+              <ion-col class="estiloHeaderTabla"> <button class="estiloIconosTabla" (click)="create()"> 
+                <ion-icon name='ios-add-circle-outline' style="zoom:1.5"></ion-icon>
               </button>
               </ion-col>
             </ion-row>
-              <ion-row *ngFor="let res of listaClientes">
-               
-                <ion-col> {{ res.tipo }}</ion-col>
-                <ion-col> {{ res.numero }}</ion-col>
-                <ion-col> {{ res.nombre }}</ion-col>
-                <ion-col > 
-                    <button class="estiloIconosTabla" (click)="details(res)">
-                <ion-icon name='ios-arrow-dropright' style="zoom:1.5"></ion-icon>
-                    </button>
-                    <button class="estiloIconosTabla" (click)="edit(res)"> 
-                <ion-icon name='ios-create-outline' style="zoom:1.5"></ion-icon>
-              </button>
-                <button  class="estiloIconosTabla" (click)="modalConfirm(res)" >
-                <ion-icon name='ios-cut-outline'  tyle="zoom:2.0"></ion-icon>
-              </button>
-               
-                </ion-col>
-            
-              </ion-row>
+                <ion-row
+                *ngFor="let res of listaClientes; odd as isOdd; even as isEven"
+                [class.odd]="isOdd" 
+                [class.even]="isEven"> 
+                  <ion-col > {{ res.tipo }}</ion-col>
+                  <ion-col > {{ res.numero }}</ion-col>
+                  <ion-col > {{ res.nombre }}</ion-col>
+                  <ion-col > 
+                      <button class="estiloIconosTabla" (click)="details(res)">
+                  <ion-icon name='ios-arrow-dropright' style="zoom:1.5"></ion-icon>
+                      </button>
+                      <button class="estiloIconosTabla" (click)="edit(res)"> 
+                  <ion-icon name='ios-create-outline' style="zoom:1.5"></ion-icon>
+                </button>
+                  <button  class="estiloIconosTabla" (click)="modalConfirm(res)" >
+                  <ion-icon name='ios-cut-outline'  tyle="zoom:5.0"></ion-icon>
+                </button>
+                
+                  </ion-col>
+              
+                </ion-row>
            
             </ion-grid>
          

@@ -1,54 +1,93 @@
 page-home {
 
-.fixed-content {
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  position: absolute;
-  display: block;
-    background-color: #66a038 !important;
-}
-    
-.button-md{
-  background-color: #878D80   !important;
-}
+  .estiloHeaderTabla{
+    border-color: azure !important;
+    border-style: double !important;
+    background: #8CC944   !important;
+    color:azure !important;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .estiloCeldasTabla{
+    border-style: ridge !important;
+  }
 
-.label-md{
-  color:azure !important;
-}
+  .odd{
+    border-style: ridge !important;
+    background: #8CC944     !important;
+    color:azure !important;
+  }
 
-.content-md{
-  color:azure;
-}
-.item-md{
-  background-color:#66a038     !important;
-  color:azure;
-}
-.padre {
-  padding: 10px 2rem;
-     margin-top: 5rem;
-        margin-left :3rem;
-        
-}
-    
- .button-ios {
-  border-radius: 4px;
-  height: 2.8em;
-  font-size: 1.6rem;
-  color: black;
-  background-color: #f7f7f7;
-  margin: 0.4rem 0.2rem;
-  padding: 0 1em;
-}
+  .even{
+    border-style: ridge !important;
+    background: #C2E697        !important;
+    color:azure !important;
+  }
 
-.button-ios.activated {
-  background-color: #66a038 !important;
-     color: #fff;
-  opacity: 1;
-}
 
-.button-ios:hover:not(.disable-hover) {
-  opacity: 0.8;
-}
+  .estiloIconosTabla{
+    background: transparent !important;
+    border: transparent !important;
+    color: white !important;
+    font-size: 1.3em !important;
+  }
+
+  .estiloIconos{
+    background: transparent !important;
+    border: transparent !important;
+    color: black !important;
+    font-size: 1.3em !important;
+  }
+  
+  .fixed-content {
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    display: block;
+      background-color: #E8ECE4   !important;
+  }
+      
+  .content-md{
+    color:black;
+  }
+  .button-md{
+    background-color: #8CC944 !important;
+  }
+  
+  .label-md{
+    color:black !important;
+  }
+
+  .item-md{
+    background-color:#F7F9F5     !important;
+    color:black;
+  }
+  .padre {
+    padding: 10px 2rem;
+       margin-top: 5rem;
+          margin-left :3rem;
+          
+  }
+      
+   .button-ios {
+    border-radius: 4px;
+    height: 2.8em;
+    font-size: 1.6rem;
+    color: black;
+    background-color: #F7F9F5;
+    margin: 0.4rem 0.2rem;
+    padding: 0 1em;
+  }
+  
+  .button-ios.activated {
+    background-color: #F7F9F5 !important;
+       color: #fff;
+    opacity: 1;
+  }
+  
+  .button-ios:hover:not(.disable-hover) {
+    opacity: 0.8;
+  }
 }

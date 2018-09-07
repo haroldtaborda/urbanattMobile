@@ -1,24 +1,38 @@
 page-clientes {
 
+  
+  .estiloHeaderTabla{
+    border-color: azure !important;
+    border-style: double !important;
+    background: #8CC944   !important;
+    color:azure !important;
+    font-size: 1.2em;
+    text-align: center;
+  }
+  .estiloCeldasTabla{
+    border-style: ridge !important;
+  }
+
+  .odd{
+    border-style: ridge !important;
+    background: #8CC944     !important;
+    color:azure !important;
+  }
+
+  .even{
+    border-style: ridge !important;
+    background: #C2E697       !important;
+    color:azure !important;
+  }
+
 
   .estiloIconosTabla{
     background: transparent !important;
     border: transparent !important;
-    color: azure !important;
+    color: white !important;
+    font-size: 1.3em !important;
   }
-  .ion-row {
-    white-space: nowrap;
-    width: 50px;
-    overflow-x: auto !important;
-  }
-  .ion-scroll[scrollX] {
-    white-space: nowrap;
-    height: 120px;
-    overflow: auto !important;
-  }
-    .scroll-item {
-      display: inline-block;
-    }
+  
   .fixed-content {
     left: 0;
     right: 0;
@@ -26,23 +40,23 @@ page-clientes {
     bottom: 0;
     position: absolute;
     display: block;
-      background-color: #66a038 !important;
+      background-color: #E8ECE4   !important;
   }
       
   .content-md{
-    color:azure;
+    color:black;
   }
   .button-md{
-    background-color: #878D80   !important;
+    background-color: #8CC944   !important;
   }
   
   .label-md{
-    color:azure !important;
+    color:black !important;
   }
 
   .item-md{
-    background-color:#66a038     !important;
-    color:azure;
+    background-color:#F7F9F5     !important;
+    color:black;
   }
   .padre {
     padding: 10px 2rem;
@@ -51,18 +65,24 @@ page-clientes {
           
   }
       
+  .estiloIconos{
+    background: transparent !important;
+    border: transparent !important;
+    color: black !important;
+    font-size: 1.3em !important;
+  }
    .button-ios {
     border-radius: 4px;
     height: 2.8em;
     font-size: 1.6rem;
     color: black;
-    background-color: #f7f7f7;
+    background-color: #F7F9F5;
     margin: 0.4rem 0.2rem;
     padding: 0 1em;
   }
   
   .button-ios.activated {
-    background-color: #66a038 !important;
+    background-color: #F7F9F5 !important;
        color: #fff;
     opacity: 1;
   }
