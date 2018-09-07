@@ -39,7 +39,7 @@ export class ClientesPage {
   }
 
   
-  eliminarCliente(res){
+  private eliminarCliente(res){
     const index: number = this.ResArray.indexOf(res);
     if (index !== -1) {
         this.ResArray.splice(index, 1);
@@ -47,18 +47,18 @@ export class ClientesPage {
     }   
   }
 
-  create(){
-
+private create(){
+console.log('crea');
   }
-  edit(){
-
+  private edit(){
+    console.log('edita');
   }
-  details(){
-    
+  private details(){
+    console.log('muestra');
   }
 
   //MODALS
-  mensajeConfirmacion(titulo, mensaje){
+  private mensajeConfirmacion(titulo, mensaje){
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: mensaje,
@@ -67,7 +67,7 @@ export class ClientesPage {
     alert.present();
   }
   
-  modalConfirm(res){
+  private modalConfirm(res){
     let alert = this.alertCtrl.create({
       title: 'Confirmación',
       message: 'Al realizar esta acción se perderan los datos eliminados',
