@@ -38,7 +38,10 @@
               <ion-col>Tipo</ion-col>
               <ion-col>Número</ion-col>
               <ion-col>Nombres</ion-col>
-              <ion-col><ion-icon name='md-add' style="zoom:1.5"></ion-icon></ion-col>
+              <ion-col> <button class="estiloIconosTabla" (click)="create()"> 
+                <ion-icon name='md-add' style="zoom:1.5"></ion-icon>
+              </button>
+              </ion-col>
             </ion-row>
               <ion-row *ngFor="let res of ResArray">
                
@@ -46,9 +49,15 @@
                 <ion-col> {{ res.numero }}</ion-col>
                 <ion-col> {{ res.nombre }}</ion-col>
                 <ion-col > 
-                    <ion-icon name='ios-arrow-dropright' style="zoom:1.5"></ion-icon>
+                    <button class="estiloIconosTabla" (click)="details(res)">
+                <ion-icon name='ios-arrow-dropright' style="zoom:1.5"></ion-icon>
+                    </button>
+                    <button class="estiloIconosTabla" (click)="edit(res)"> 
                 <ion-icon name='ios-create-outline' style="zoom:1.5"></ion-icon>
-                <ion-icon name='ios-cut-outline' style="zoom:1.5"></ion-icon>
+              </button>
+                <button  class="estiloIconosTabla" (click)="modalConfirm(res)" >
+                <ion-icon name='ios-cut-outline'  tyle="zoom:2.0"></ion-icon>
+              </button>
                
                 </ion-col>
             
