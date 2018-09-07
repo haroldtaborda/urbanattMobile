@@ -22,26 +22,31 @@ export class HomePage {
   } 
 
   private iniciar() { 
-    this.validarLogin().subscribe(
-      result => {
-        debugger;
-          if(result.loginResult && result.responseResult && 
-            result.responseResult.result){
-              this.mostarLogin=true;
-          }else{
-            this.modalInfo("Información", "Verifique usuario y contraseña");
-            
-          }
+        //CON BACK
+         //this.login();
+        //SIN BACK
+        this.mostarLogin=true;
+    }
 
-      },
-      error => {
+    private login(){
+      this.validarLogin().subscribe(
+        result => {
+          
+            if(result.loginResult && result.responseResult && 
+              result.responseResult.result){
+                this.mostarLogin=true;
+            }else{
+              this.modalInfo("Información", "Verifique usuario y contraseña");
+              
+            }
   
-        this.modalInfo("Información", "Verifique usuario y contraseña");
-          console.log(<any>error);
-      }
-  );
-   
+        },
+        error => {
     
+          this.modalInfo("Información", "Verifique usuario y contraseña");
+            console.log(<any>error);
+        }
+    );
     }
    private validarLogin(): Observable<any> { 
  
