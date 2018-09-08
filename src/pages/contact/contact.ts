@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, ToastController } from 'ionic-angular';
 
 @Component({
   selector: 'page-contact',
@@ -34,7 +34,7 @@ export class ContactPage {
 
   private paso:number =1;
   private mensaje:string ="Siguiente";
-  constructor(public navCtrl: NavController) {
+  constructor(public navCtrl: NavController, private toastCtrl: ToastController) {
 
   }
 
@@ -45,8 +45,23 @@ export class ContactPage {
     }
     if(this.paso==4){
       this.paso=1;
+      this.mensaje="Siguiente";
+      this.presentToast();
     }
-    
+  }
+
+  presentToast() {
+    let toast = this.toastCtrl.create({
+      message: 'El mensaje ha sido enviado, nuestro equipo de desarrollo se pondra en contacto',
+      duration: 3000,
+      position: 'middle'
+    });
+  
+    toast.onDidDismiss(() => {
+      console.log('Dismissed toast');
+    });
+  
+    toast.present();
   }
 
 }
