@@ -7,51 +7,58 @@
 </ion-header>
 
 <ion-content >
-  
+    <form #form="ngForm" (ngSubmit)="acept(form)" >
   <ion-list>
-      <ion-label style="text-align: center;font-size: 2rem;font-weight: 500">Información cliente</ion-label>
-    <ion-item>
-      <ion-label>Tipo identificación</ion-label>
-      <ion-select [(ngModel)]="cliente.tipo" [disabled]="modoConsulta">
+      <ion-label class="tituloForm">Información cliente</ion-label>
+      <ion-item [class]="ti.valid ? 'item item-block item-md item-input ng-untouched ng-pristine ng-valid' : 'item item-block item-md item-input ng-pristine ng-invalid ng-touched'">
+      <ion-label >Tipo identificación</ion-label>
+      <ion-select [(ngModel)]="cliente.tipo" [disabled]="modoConsulta" name="tipo" 
+      #spy required #ti="ngModel">
         <ion-option value="CC">Cédula ciudadania</ion-option>
         <ion-option value="CE">Cédula extrangeria</ion-option>
         <ion-option value="NIT">Nit</ion-option>
       </ion-select>
     </ion-item>
-
-    <ion-item>
+                    
+    <ion-item [class]="numer.valid ? 'item item-block item-md item-input ng-untouched ng-pristine ng-valid' : 'item item-block item-md item-input ng-pristine ng-invalid ng-touched'"> 
       <ion-label>Número identificación</ion-label>
-      <ion-input [(ngModel)]="cliente.numero" type="text" [disabled]="modoConsulta"></ion-input>
+      <ion-input [(ngModel)]="cliente.numero" type="text" [disabled]="modoConsulta"  name="numero" 
+      #spya required #numer="ngModel"></ion-input>
+      
     </ion-item>
+                        
 
-    <ion-item>
+    <ion-item [class]="nomB.valid ? 'item item-block item-md item-input ng-untouched ng-pristine ng-valid' : 'item item-block item-md item-input ng-pristine ng-invalid ng-touched'">
       <ion-label>Nombre completo</ion-label>
-      <ion-input [(ngModel)]="cliente.nombre" type="text" [disabled]="modoConsulta"></ion-input>
+      <ion-input [(ngModel)]="cliente.nombre" type="text" [disabled]="modoConsulta" name="nombre"
+      #spy required #nomB="ngModel"></ion-input>
     </ion-item>
 
-    <ion-item>
+    <ion-item [class]="tele.valid ? 'item item-block item-md item-input ng-untouched ng-pristine ng-valid' : 'item item-block item-md item-input ng-pristine ng-invalid ng-touched'">
       <ion-label>Teléfono</ion-label>
-      <ion-input [(ngModel)]="cliente.telefono" type="text" [disabled]="modoConsulta"></ion-input>
+      <ion-input [(ngModel)]="cliente.telefono" type="text" [disabled]="modoConsulta" name="telefono"
+      #spy required #tele="ngModel" ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Dirección</ion-label>
-      <ion-input [(ngModel)]="cliente.direccion" type="text" [disabled]="modoConsulta"></ion-input>
+      <ion-input [(ngModel)]="cliente.direccion" type="text" [disabled]="modoConsulta" name="direccion"
+      ></ion-input>
     </ion-item>
 
     <ion-item>
       <ion-label>Correo</ion-label>
-      <ion-input [(ngModel)]="cliente.correo" type="text" [disabled]="modoConsulta"></ion-input>
+      <ion-input [(ngModel)]="cliente.correo" type="text" [disabled]="modoConsulta" name="correo"></ion-input>
     </ion-item>
 
-    <button ion-button round (click)="cancel()">
+    <button ion-button round block novalidate (click)="cancel()">
       Cancelar
     </button>
-    <button ion-button round (click)="acept()" [disabled]="modoConsulta">
+    <button ion-button round type="submit" block [disabled]="modoConsulta || !form.valid">
       Aceptar
     </button>
 
   </ion-list>
-
+    </form>
 
 </ion-content>

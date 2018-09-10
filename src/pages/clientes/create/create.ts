@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController, ViewController, NavParams } from 'ionic-angular';
+import { NavController, ViewController, NavParams,ToastController } from 'ionic-angular';
 import { App, MenuController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
@@ -8,11 +8,18 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'create.html'
 })
 export class CreatePage {
-
+  pru=true;
   modoConsulta=false;
-  cliente = {};
+  cliente = {
+    tipo: '',
+    numero: '',
+    telefono: '',
+    direccion: '',
+    correo: ''
+
+  };
   constructor(public navCtrl: NavController, private alertCtrl: AlertController,
-    public viewCtrl: ViewController, params: NavParams) {
+    public viewCtrl: ViewController, params: NavParams, private toastCtrl: ToastController) {
       if (params.get('modoConsulta') != null && params.get('modoConsulta') ==true) {
         this.modoConsulta=true;
       }
@@ -23,12 +30,15 @@ export class CreatePage {
       this.cliente = params.get('cliEdit');
     }
     else {
-      this.cliente = {};
+      this.cliente = {tipo: '',
+      numero: '',
+      telefono: '',
+      direccion: '',
+      correo: ''};
     }
   }
-
-
-  private acept() {
+ 
+  private acept(miFormulario) {
     this.mensajeConfirmacion('Exito', 'Registro procesado exitosamente ');
     this.dismiss(this.cliente);
   }

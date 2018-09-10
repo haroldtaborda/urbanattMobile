@@ -1,5 +1,17 @@
 page-create {
 
+  .tituloForm{
+    text-align: center;font-size: 2rem;font-weight: 500;
+  }
+  .requeridoStyle{
+    border: red;
+    border-bottom-style: solid;
+  }
+
+  .exitoStyle{
+    border: green;
+    border-bottom-style: solid;
+  }
    
   .estiloHeaderTabla{
     border-color: azure !important;
