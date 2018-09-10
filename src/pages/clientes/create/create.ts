@@ -8,16 +8,9 @@ import { AlertController } from 'ionic-angular';
   templateUrl: 'create.html'
 })
 export class CreatePage {
-  pru=true;
-  modoConsulta=false;
-  cliente = {
-    tipo: '',
-    numero: '',
-    telefono: '',
-    direccion: '',
-    correo: ''
-
-  };
+ 
+  modoConsulta;
+  cliente;
   constructor(public navCtrl: NavController, private alertCtrl: AlertController,
     public viewCtrl: ViewController, params: NavParams, private toastCtrl: ToastController) {
       if (params.get('modoConsulta') != null && params.get('modoConsulta') ==true) {
