@@ -7,7 +7,7 @@
 </ion-header>
 
 <ion-content >
-    <form #form="ngForm" (ngSubmit)="acept(form)" >
+    <form #form="ngForm" >
   <ion-list>
       <ion-label class="tituloForm">Información cliente</ion-label>
       <ion-item [class]="ti.valid ? 'item item-block item-md item-input ng-untouched ng-pristine ng-valid' : 'item item-block item-md item-input ng-pristine ng-invalid ng-touched'">
@@ -54,7 +54,7 @@
     <button ion-button round block novalidate (click)="cancel()">
       Cancelar
     </button>
-    <button ion-button round type="submit" block [disabled]="modoConsulta || !form.valid">
+    <button ion-button round (click)="acept(form)" block [disabled]="modoConsulta || !form.valid">
       Aceptar
     </button>
 

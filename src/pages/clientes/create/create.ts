@@ -10,42 +10,45 @@ import { AlertController } from 'ionic-angular';
 export class CreatePage {
  
   modoConsulta;
-  cliente;
+  cliente={};
   constructor(public navCtrl: NavController, private alertCtrl: AlertController,
-    public viewCtrl: ViewController, params: NavParams, private toastCtrl: ToastController) {
-      if (params.get('modoConsulta') != null && params.get('modoConsulta') ==true) {
-        this.modoConsulta=true;
-      }
-      else{
-        this.modoConsulta=false;
-      }
-    if (params.get('cliEdit') != null) {
-      this.cliente = params.get('cliEdit');
+    public viewCtrl: ViewController, public params: NavParams) {
+    this.init()
+  }
+
+  init(){
+    if (this.params.get('modoConsulta') != null && this.params.get('modoConsulta') ==true) {
+      this.modoConsulta=true;
     }
-    else {
-      this.cliente = {tipo: '',
-      numero: '',
-      telefono: '',
-      direccion: '',
-      correo: ''};
+    else{
+      this.modoConsulta=false;
     }
+  if (this.params.get('cliEdit') != null) {
+    this.cliente = this.params.get('cliEdit');
+  }
+  else {
+    this.cliente={};
+  }
   }
  
   private acept(miFormulario) {
+    debugger;
     this.mensajeConfirmacion('Exito', 'Registro procesado exitosamente ');
-    this.dismiss(this.cliente);
+    this.viewCtrl.dismiss(this.cliente);
   }
   private cancel() {
-    this.dismiss(null);
+    debugger;
+    this.viewCtrl.dismiss(null);
   }
   dismiss(c) {
-    this.viewCtrl.dismiss(c);
+   
   }
 
 
 
   //MODALS
   private mensajeConfirmacion(titulo, mensaje) {
+    debugger;
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: mensaje,

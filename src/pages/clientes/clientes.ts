@@ -74,6 +74,7 @@ export class ClientesPage {
     if (index !== -1) {
         this.ResArray.splice(index, 1);
         this.mensajeConfirmacion('Exito', 'Registro eliminado exitosamente ');
+        this.search();
     }   
   }
 
@@ -83,6 +84,7 @@ let profileModal = this.modalCtrl.create(CreatePage);
    profileModal.onDidDismiss(data => {
      if(data){
      this.ResArray.push(data);
+     this.search();
      }
    });
    profileModal.present();
@@ -98,6 +100,7 @@ let profileModal = this.modalCtrl.create(CreatePage);
       }   
       //agrego el editado
       this.ResArray.push(data);
+      this.search();
     }
    });
    profileModal.present();
@@ -111,6 +114,7 @@ let profileModal = this.modalCtrl.create(CreatePage);
 
   //MODALS
   private mensajeConfirmacion(titulo, mensaje){
+    debugger;
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: mensaje,
