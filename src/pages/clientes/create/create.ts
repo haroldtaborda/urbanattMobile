@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController,ViewController,NavParams } from 'ionic-angular';
+import { NavController, ViewController, NavParams } from 'ionic-angular';
 import { App, MenuController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 
@@ -9,24 +9,30 @@ import { AlertController } from 'ionic-angular';
 })
 export class CreatePage {
 
-  cliente={};
-  constructor(public navCtrl: NavController,private alertCtrl: AlertController,
+  modoConsulta=false;
+  cliente = {};
+  constructor(public navCtrl: NavController, private alertCtrl: AlertController,
     public viewCtrl: ViewController, params: NavParams) {
-      debugger;
-      if(params.get('cliEdit') != null){
-    this.cliente=params.get('cliEdit');
+      if (params.get('modoConsulta') != null && params.get('modoConsulta') ==true) {
+        this.modoConsulta=true;
       }
       else{
-        this.cliente={};
+        this.modoConsulta=false;
       }
+    if (params.get('cliEdit') != null) {
+      this.cliente = params.get('cliEdit');
+    }
+    else {
+      this.cliente = {};
+    }
   }
 
-  
-  private acept(){
+
+  private acept() {
     this.mensajeConfirmacion('Exito', 'Registro procesado exitosamente ');
     this.dismiss(this.cliente);
   }
-  private cancel(){
+  private cancel() {
     this.dismiss(null);
   }
   dismiss(c) {
@@ -35,8 +41,8 @@ export class CreatePage {
 
 
 
-   //MODALS
-   private mensajeConfirmacion(titulo, mensaje){
+  //MODALS
+  private mensajeConfirmacion(titulo, mensaje) {
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: mensaje,

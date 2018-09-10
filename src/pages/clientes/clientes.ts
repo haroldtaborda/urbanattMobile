@@ -78,7 +78,7 @@ export class ClientesPage {
   }
 
 private create(){
-  debugger;
+
 let profileModal = this.modalCtrl.create(CreatePage);
    profileModal.onDidDismiss(data => {
      if(data){
@@ -102,8 +102,11 @@ let profileModal = this.modalCtrl.create(CreatePage);
    });
    profileModal.present();
   }
-  private details(){
-    console.log('muestra');
+  private details(clienteMuestra){
+    let profileModal = this.modalCtrl.create(CreatePage, { cliEdit: clienteMuestra, modoConsulta: true});
+    profileModal.onDidDismiss(data => {
+    });
+    profileModal.present();
   }
 
   //MODALS

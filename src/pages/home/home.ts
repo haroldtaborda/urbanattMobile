@@ -53,7 +53,7 @@ export class HomePage {
       this.data ={};
       this.data.userName=this.usuario;
       this.data.password=this.contrasenia;
-    let json = JSON.stringify(this.data);
+    
  
     let headers = new HttpHeaders()
     .set('Accept','application/json, text/plain, */*')
