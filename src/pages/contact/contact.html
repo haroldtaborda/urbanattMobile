@@ -1,27 +1,12 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contactenos
+      EJEMPLO
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-    <ion-list [ngSwitch]="paso">
-        <ion-item *ngSwitchCase="1">
-          <ion-label floating>Nombre:</ion-label>
-          <ion-input type="text" value="" placeholder="Nombre"></ion-input>
-        </ion-item>
-        <ion-item *ngSwitchCase="2">
-          <ion-label floating>Correo:</ion-label>
-          <ion-input type="email" value="" placeholder="Correo"></ion-input>
-        </ion-item>
-        <ion-item *ngSwitchCase="3">
-            <ion-label floating>Mensaje:</ion-label>
-            <ion-textarea type="email" value="" style="width: auto"></ion-textarea>
-          </ion-item>
-    </ion-list>
-  <button  ion-button round (click)="siguiente()" style="width: 100%;">
-    {{mensaje}}
-  </button>    
+   
+
 </ion-content>

@@ -39,7 +39,8 @@ export class ClientesPage {
   listaClientes=[];
   tipoId;
   numId;
-  constructor(public navCtrl: NavController,private alertCtrl: AlertController,public modalCtrl: ModalController) {
+  constructor(public navCtrl: NavController,private alertCtrl:
+     AlertController,public modalCtrl: ModalController) {
   }
 
   search(){
@@ -70,10 +71,10 @@ export class ClientesPage {
   }
   
   private eliminarCliente(res){
-    const index: number = this.ResArray.indexOf(res);
+    const index: number = this.listaClientes.indexOf(res);
     if (index !== -1) {
-        this.ResArray.splice(index, 1);
-        this.mensajeConfirmacion('Exito', 'Registro eliminado exitosamente ');
+        this.listaClientes.splice(index, 1);
+        this.mensajeConfirmacion('Exito', 'Registro eliminado exitosamente');
         this.search();
     }   
   }
@@ -83,7 +84,7 @@ private create(){
 let profileModal = this.modalCtrl.create(CreatePage);
    profileModal.onDidDismiss(data => {
      if(data){
-     this.ResArray.push(data);
+     this.listaClientes.push(data);
      this.search();
      }
    });
@@ -96,10 +97,10 @@ let profileModal = this.modalCtrl.create(CreatePage);
     const index: number = this.ResArray.indexOf(clienteEdita);
      //primero elimino el anterior
      if (index !== -1) {
-      this.ResArray.splice(index, 1);   
+      this.listaClientes.splice(index, 1);   
       }   
       //agrego el editado
-      this.ResArray.push(data);
+      this.listaClientes.push(data);
       this.search();
     }
    });
@@ -107,14 +108,11 @@ let profileModal = this.modalCtrl.create(CreatePage);
   }
   private details(clienteMuestra){
     let profileModal = this.modalCtrl.create(CreatePage, { cliEdit: clienteMuestra, modoConsulta: true});
-    profileModal.onDidDismiss(data => {
-    });
     profileModal.present();
   }
 
   //MODALS
   private mensajeConfirmacion(titulo, mensaje){
-    debugger;
     let alert = this.alertCtrl.create({
       title: titulo,
       subTitle: mensaje,
