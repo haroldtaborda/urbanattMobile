@@ -7,6 +7,67 @@
 </ion-header>
   
   <ion-content>
-      <ion-label class="tituloForm">Filtros Productos</ion-label>     
+      <ion-label class="tituloForm">Filtros Productos</ion-label>
+      <!--Campo donde se ingresa el nombre del producto a buscar-->
+      <ion-item>
+        <ion-label>Nombre Producto</ion-label>
+        <ion-input [(ngModel)]="nombreBusqueda" type="text"></ion-input>
+      </ion-item>
+      <!--Lista que contiene las posibles valores del atributo tipo-->
+      <ion-list>
+        <ion-item>
+          <ion-label>Tipo</ion-label>
+            <ion-select [(ngModel)]="tipoBusqueda">
+              <ion-option value="Multivitaminicos">Multivitaminicos</ion-option>
+              <ion-option value="Bebidas">Bebidas Funcionales</ion-option>
+              <ion-option value="Proteinas">Proteinas</ion-option>
+            </ion-select>
+        </ion-item>
+      </ion-list>
+      <!--Boton que llama el metodo buscar-->
+      <button ion-button round (click)="buscar()">
+          Buscar
+      </button>
+
+      <ion-label class="tituloForm">Productos</ion-label>
+      <!--Tabla donde se imprime los resultados obtenidos en la buisqueda-->
+      <ion-grid>
+        <ion-row>
+          <ion-col class="estiloHeaderTabla">Nombre Producto</ion-col>
+          <ion-col class="estiloHeaderTabla">Tipo</ion-col>
+          <ion-col class="estiloHeaderTabla">Cantidad</ion-col>
+          <ion-col class="estiloHeaderTabla"> 
+            <button  title="Crear"  class="estiloIconosTabla" (click)="create()"> 
+              <ion-icon name='ios-add-circle-outline' style="zoom:1.5"></ion-icon>
+            </button>
+          </ion-col>
+        </ion-row>
+          <ion-row
+          *ngFor="let producto of listaProductos; odd as isOdd; even as isEven"
+          [class.odd]="isOdd" 
+          [class.even]="isEven"> 
+            <ion-col > {{ producto.nombre }}</ion-col>
+            <ion-col > {{ producto.tipo }}</ion-col>
+            <ion-col > {{ producto.cantidad }}</ion-col>
+            <ion-col > 
+                <button class="estiloIconosTabla" title="Ver detalles" (click)="details(res)">
+            <ion-icon name='ios-arrow-dropright' style="zoom:1.5"></ion-icon>
+                </button>
+                <button class="estiloIconosTabla" title="Editar" (click)="edit(res)"> 
+            <ion-icon name='ios-create-outline' style="zoom:1.5"></ion-icon>
+          </button>
+            <button  class="estiloIconosTabla" title="Eliminar" (click)="modalConfirm(res)" >
+            <ion-icon name='ios-cut-outline'  tyle="zoom:5.0"></ion-icon>
+          </button>
+          <button  class="estiloIconosTabla" title="Sucursales" (click)="sucursales(res)" >
+              <ion-icon name='ios-home-outline'  tyle="zoom:5.0"></ion-icon>
+            </button>
+          
+            </ion-col>
+        
+          </ion-row>
+     
+      </ion-grid>
+
   </ion-content>
   
