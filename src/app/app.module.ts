@@ -9,11 +9,14 @@ import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { InicioPage } from '../pages/inicio/inicio';
 import { ClientesPage } from '../pages/clientes/clientes';
-import { ProductosPage } from '../pages/productos/productos';
 import { CreatePage } from '../pages/clientes/create/create';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import {HttpClientModule} from '@angular/common/http';
+
+//Imports del componente de producto
+import { ProductosPage } from '../pages/productos/productos';
+import { CrearProductoPage } from '../pages/productos/crear/crearProducto';
 
 @NgModule({
   declarations: [
@@ -25,7 +28,8 @@ import {HttpClientModule} from '@angular/common/http';
     HomePage,
     CreatePage,
     TabsPage,
-    ProductosPage
+    ProductosPage,
+    CrearProductoPage
     
   ],
   imports: [
@@ -43,7 +47,9 @@ import {HttpClientModule} from '@angular/common/http';
     HomePage,
     CreatePage,
     TabsPage,
-    ProductosPage
+    ProductosPage,
+    CrearProductoPage
+
   ],
   providers: [
     StatusBar,

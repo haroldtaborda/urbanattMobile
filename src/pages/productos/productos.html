@@ -37,7 +37,7 @@
           <ion-col class="estiloHeaderTabla">Tipo</ion-col>
           <ion-col class="estiloHeaderTabla">Cantidad</ion-col>
           <ion-col class="estiloHeaderTabla"> 
-            <button  title="Crear"  class="estiloIconosTabla" (click)="create()"> 
+            <button  title="Crear"  class="estiloIconosTabla" (click)="crearProducto()"> 
               <ion-icon name='ios-add-circle-outline' style="zoom:1.5"></ion-icon>
             </button>
           </ion-col>
@@ -50,23 +50,17 @@
             <ion-col > {{ producto.tipo }}</ion-col>
             <ion-col > {{ producto.cantidad }}</ion-col>
             <ion-col > 
-                <button class="estiloIconosTabla" title="Ver detalles" (click)="details(res)">
-            <ion-icon name='ios-arrow-dropright' style="zoom:1.5"></ion-icon>
-                </button>
-                <button class="estiloIconosTabla" title="Editar" (click)="edit(res)"> 
-            <ion-icon name='ios-create-outline' style="zoom:1.5"></ion-icon>
-          </button>
-            <button  class="estiloIconosTabla" title="Eliminar" (click)="modalConfirm(res)" >
-            <ion-icon name='ios-cut-outline'  tyle="zoom:5.0"></ion-icon>
-          </button>
-          <button  class="estiloIconosTabla" title="Sucursales" (click)="sucursales(res)" >
-              <ion-icon name='ios-home-outline'  tyle="zoom:5.0"></ion-icon>
-            </button>
-          
+              <button class="estiloIconosTabla" title="Ver detalles" (click)="detallesProducto(producto)">
+                <ion-icon name='ios-arrow-dropright' style="zoom:1.5"></ion-icon>
+              </button>
+              <button class="estiloIconosTabla" title="Editar" (click)="editarProducto(producto)"> 
+                <ion-icon name='ios-create-outline' style="zoom:1.5"></ion-icon>
+              </button>
+              <button  class="estiloIconosTabla" title="Eliminar" (click)="eliminarProducto(producto)" >
+                <ion-icon name='ios-cut-outline'  tyle="zoom:5.0"></ion-icon>
+              </button>
             </ion-col>
-        
           </ion-row>
-     
       </ion-grid>
 
   </ion-content>

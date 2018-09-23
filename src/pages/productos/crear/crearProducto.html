@@ -1,0 +1,62 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Producto
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content >
+    <form #form="ngForm" >
+      <ion-item [class]="nombre.valid ? 'item item-block item-md item-input ng-untouched ng-pristine ng-valid' : 'item item-block item-md item-input ng-pristine ng-invalid ng-touched'"> 
+        <ion-label>Nombre</ion-label>
+        <ion-input [(ngModel)]="producto.nombre" type="text" [disabled]="modoConsulta"  name="nombre" 
+        #spynombre required #nombre="ngModel"></ion-input>  
+      </ion-item>
+
+      <ion-item [class]="tipo.valid ? 'item item-block item-md item-input ng-untouched ng-pristine ng-valid' : 'item item-block item-md item-input ng-pristine ng-invalid ng-touched'">
+        <ion-label >Tipo</ion-label>
+        <ion-select [(ngModel)]="producto.tipo" [disabled]="modoConsulta" name="tipo" 
+        #spytipo required #tipo="ngModel">
+          <ion-option value="Multivitaminicos">Multivitaminicos</ion-option>
+          <ion-option value="Bebidas">Bebidas Funcionales</ion-option>
+          <ion-option value="Proteinas">Proteinas</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item>
+        <ion-label >Unidad de Medida</ion-label>
+        <ion-select [(ngModel)]="producto.medida" [disabled]="modoConsulta" name="medida" 
+         #medida="ngModel">
+          <ion-option value="Kg">Kilogramos</ion-option>
+          <ion-option value="Lb">Libras</ion-option>
+          <ion-option value="G">Gramos</ion-option>
+          <ion-option value="Mg">Miligramos</ion-option>
+          <ion-option value="L">Litros</ion-option>
+          <ion-option value="Ml">Mililitros</ion-option>
+          <ion-option value="O">Otros</ion-option>
+        </ion-select>
+      </ion-item>
+
+      <ion-item> 
+        <ion-label>Peso</ion-label>
+        <ion-input [(ngModel)]="producto.peso" type="number" [disabled]="modoConsulta"  name="peso" 
+         #peso="ngModel"></ion-input>  
+      </ion-item>
+
+      <ion-item [class]="cantidad.valid ? 'item item-block item-md item-input ng-untouched ng-pristine ng-valid' : 'item item-block item-md item-input ng-pristine ng-invalid ng-touched'"> 
+        <ion-label>Cantidad Lote</ion-label>
+        <ion-input [(ngModel)]="producto.cantidad" type="number" [disabled]="modoConsulta"  name="cantidad" 
+        #spycantidad required #cantidad="ngModel"></ion-input>  
+      </ion-item>
+
+      <ion-item> 
+        <ion-label>Descripción</ion-label>
+        <ion-textarea [(ngModel)]="producto.descripcion" type="number" [disabled]="modoConsulta"  name="descripcion" 
+          #descripcion="ngModel"></ion-textarea>  
+      </ion-item>
+
+      <button ion-button round block novalidate (click)="cancel()">Cancelar</button>
+      <button ion-button round (click)="acept(form)" block [disabled]="modoConsulta || !form.valid">Aceptar</button>
+    </form>
+</ion-content>
