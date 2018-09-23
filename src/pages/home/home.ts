@@ -6,6 +6,7 @@ import { ClientesPage } from '../clientes/clientes';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { AlertController,ModalController } from 'ionic-angular';
 import { NgForm } from '@angular/forms';
+import { ProductosPage} from "../productos/productos";
 
 @Component({
   selector: 'page-home',
@@ -80,8 +81,11 @@ export class HomePage {
         if(p == 'clientes'){
           this.navCtrl.push(ClientesPage);
         }
-        else  if(p == 'cerrarSesion'){
-          this.mostarLogin=false;
+        if(p == 'productos'){
+           this.navCtrl.push(ProductosPage);
+        }
+        if(p == 'cerrarSesion'){
+           this.mostarLogin=false;
         }
       }
      
